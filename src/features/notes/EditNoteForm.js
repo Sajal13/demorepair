@@ -49,7 +49,7 @@ const EditNoteForm = ({ note, users }) => {
 
     const onTitleChange = e => setTitle(e.target.value);
     const onTextChange = e => setText(e.target.value);
-    const onCompletedChange = e => setComplete(e.target.value);
+    const onCompletedChange = e => setComplete(prev => !prev);
     const onUserIdChange = e => setUserId(e.target.value);
 
     const canSave = [title, text, userId].every(Boolean) && !isLoading;
